@@ -10,10 +10,10 @@ unzip $s.zip -d OUTPUT-$s/MS/
 for f in $s/*.pdf; do
     echo "Processing $f "
     pdftk "$f" cat $odd output "/root/OUTPUT-$s/$(basename "$f" .pdf).pdf"
+echo "CLEANING"
+rm -rf $s
+rm -rf $s.zip
 done
 else
   echo "PLEASE DEFINE SUBJECT???"
 fi 
-echo "CLEANING"
-rm -rf $s
-rm -rf $s.zip
